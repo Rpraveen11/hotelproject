@@ -33,7 +33,7 @@ private baseURL ="http://localhost:8086";
     return this.httpClient.delete(this.baseURL+"/api/user/"+id);
   }
 
-  getUserById(id:number): Observable<Object>{
+  getById(id:number): Observable<Object>{
     return this.httpClient.get(this.baseURL+"/api/user/"+id);
   }
 }

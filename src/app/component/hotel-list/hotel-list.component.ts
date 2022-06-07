@@ -11,7 +11,7 @@ import { User } from 'src/app/user';
 export class HotelListComponent implements OnInit {
  user: User[];
 
-  userService: any;
+ HotelServiceService:any;
   constructor(private hotelserviceService: HotelserviceService ,private router: Router) { }
 
   ngOnInit(): void {
@@ -33,16 +33,14 @@ this.router.navigate(['add']);
 
 
 deleteUser(userId: number) {
-  this.userService.deleteUser(userId)
+  this.hotelserviceService.deleteUser(userId)
     .subscribe(
       data => {
         console.log(data);
         this.listAllUserFromRemote();
       })
  }
-//   getAllEmployeeFromRemote() {
-//     throw new Error('Method not implemented.');
-//   }
+
 
 
 }

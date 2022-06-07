@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 
+type Long = number;
+
 @NgModule()
 export class User {
     userId:number;

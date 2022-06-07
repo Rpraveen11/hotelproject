@@ -11,23 +11,28 @@ import { User } from 'src/app/user';
 export class UpdateComponent implements OnInit {
 
   
-  id:number;
+  userId: number;
 user:any;
+HotelserviceService:any;
     constructor(private route:ActivatedRoute, private router :Router, 
       private hotelService:HotelserviceService) { }
   
     ngOnInit(): void { 
       this.user= new User();
-      this.id = this.route.snapshot.params['id'];
-      this.hotelService['getUserById'](this.id)
+      this.  userId = this.route.snapshot.params['userId'];
+      this.hotelService.getById(this.userId)
       .subscribe(data => {
         console.log(data),
         this.user=data;
       })
     }
     updateUser(){
-      this.hotelService.updateUser(this.user.userId, this.user)
+      this.  userId = this.route.snapshot.params['userId'];
+
+      this.hotelService.updateUser(this.  userId, this.user)
+
       .subscribe(data => {
+        
         this.user= data;
         this.gotoList();
       } );

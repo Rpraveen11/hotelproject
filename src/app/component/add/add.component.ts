@@ -32,7 +32,7 @@ user:User = new User();
   }
 
   gotoList(){
-    this.router.navigate(['UserList']);
+    this.router.navigate(['hotelList']);
   }
 }
 

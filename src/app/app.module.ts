@@ -11,6 +11,7 @@ import { HotelListComponent } from './component/hotel-list/hotel-list.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './component/update/update.component';
 import { AddComponent } from './component/add/add.component';
+import { RoomComponent } from './component/room/room.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddComponent } from './component/add/add.component';
     LoginComponent,
     HotelListComponent,
     UpdateComponent,
-    AddComponent],
+    AddComponent,
+    RoomComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

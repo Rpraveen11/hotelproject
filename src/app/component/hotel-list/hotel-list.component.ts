@@ -24,14 +24,16 @@ private listAllUserFromRemote(){
 
 
 
-updateUser(id:number, user: User) {
-  this.router.navigate(['updateUser', user]);
+updateUser(id:number) {
+  this.router.navigate(['updateUser']);
 }
 addUser(){
 this.router.navigate(['add']);
 }
-
-
+userList()
+{
+  this.router.navigate(['userList']);
+}
 deleteUser(userId: number) {
   this.hotelserviceService.deleteUser(userId)
     .subscribe(

@@ -1,3 +1,7 @@
+<html>
+  <body>
+
+  
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       
@@ -7,23 +11,24 @@
             <a class="nav-link active" aria-current="page" href="header">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="hotelList">User</a>
+            <a class="nav-link active" aria-current="page" href="login">User</a>
+
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Reservation</a>
+            <a class="nav-link active" href="room">Reservation</a>
           </li>
+          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-         dropdown
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
             </a>
-            <ul class="dropdown-content"  aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="add">Add New User</a></li>
-              <li><a class="dropdown-item" href="Update">Update user Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Bookings</a></li>
-            </ul>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="add">Add user</a>
+              <a class="dropdown-item" href="hotelList">List user</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="header">Home</a>
+            </div>
           </li>
-         
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -32,6 +37,7 @@
       </div>
     </div>
   </nav>
-  
+</body>
+</html>
 
 <router-outlet></router-outlet>

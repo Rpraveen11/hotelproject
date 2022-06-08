@@ -1,5 +1,4 @@
-<button class="btn btn-primary" (click)="addUser()">Add User</button>
-<div class="btn btn-primary"  >User List</div>
+<h1>Users List</h1>
 <div *ngFor="let user of user" class="container">
 <div class="card mb-3 " >
     <div class="row g-0">
@@ -8,14 +7,14 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{user.userId}}</h5>
+          <p class="card-title">{{user.userId}}</p>
           <p class="card-text">{{user.username}} </p>
           <p class="card-text">{{user.email}}</p>
           <p class="card-text">{{user.phoneno}}</p>
           <p class="card-text">{{user.location}}</p>
 
           <!--<p class="card-text">{{employee.designation}}</p>-->
-        <p><button (click)="updateUser(user.userId, user)" class="btn btn-info " style="margin-right:9px">Update</button>
+        <p><button (click)="updateUser(user.userId)" class="btn btn-info " style="margin-right:9px">Update</button>
             <button (click)="deleteUser(user.userId)" class="btn btn-danger">Delete</button></p>
 
         </div>

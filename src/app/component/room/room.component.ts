@@ -14,7 +14,9 @@ rooms:Room[];
 
   ngOnInit(): void {
     this.listAllRoomFromRemote();
+  
   }
+ 
 private listAllRoomFromRemote(){
   this.reservationService['listAllRoomFromRemote']().subscribe(data =>{this.rooms=data;})
 }

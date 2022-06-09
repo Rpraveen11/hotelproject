@@ -12,7 +12,7 @@ const newLocal = "update";
 const routes: Routes = [
   {path: '', redirectTo:'hotelList' , pathMatch: 'full'},
   {path: 'hotelList', component: HotelListComponent},
-  {path: 'updateUser' ,component: UpdateComponent},
+  {path: 'update/:id' ,component: UpdateComponent},
   {path: "add" , component:AddComponent},
 {path:"header",component:HeaderComponent},
 {path :"login",component :LoginComponent},

@@ -5,7 +5,7 @@ type Long = number;
 @NgModule()
 export class User {
    
-    userId:Long;
+    userId?:Long;
     username:String;
     email:String;
     phoneno:number;

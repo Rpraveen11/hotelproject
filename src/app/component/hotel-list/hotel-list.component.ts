@@ -9,23 +9,24 @@ import { User } from 'src/app/user';
   styleUrls: ['./hotel-list.component.css']
 })
 export class HotelListComponent implements OnInit {
- users: User[];
+ user: User[];
 
  HotelServiceService:any;
   constructor(private hotelserviceService: HotelserviceService ,private router: Router) { }
 
   ngOnInit(): void {
   this.listAllUserFromRemote();
+
   }
 private listAllUserFromRemote(){
-  this.hotelserviceService['listAllUserFromRemote']().subscribe(data =>{this.users=data;})
+  this.hotelserviceService['listAllUserFromRemote']().subscribe(data =>{this.user=data;})
 }
 
 
 
 
-updateUser(id:number) {
-  this.router.navigate(['updateUser']);
+updateUser(userId:number) {
+  this.router.navigate(['update',userId]);
 }
 addUser(){
 this.router.navigate(['add']);
@@ -39,10 +40,10 @@ deleteUser(userId: number) {
     .subscribe(
       data => {
         console.log(data);
-        this.listAllUserFromRemote();
+    
+       this.hotelserviceService.listAllUserFromRemote();
       })
  }
-
 
 
 }

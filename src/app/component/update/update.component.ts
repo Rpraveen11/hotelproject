@@ -10,8 +10,9 @@ import { User } from 'src/app/user';
 })
 export class UpdateComponent implements OnInit {
 
-  
-  userId: number;
+  userId:number;
+  id: number;
+
 user:any;
 HotelserviceService:any;
     constructor(private route:ActivatedRoute, private router :Router, 
@@ -19,15 +20,18 @@ HotelserviceService:any;
   
     ngOnInit(): void { 
       this.user= new User();
-      this.  userId = this.route.snapshot.params['userId'];
-      this.hotelService.getById(this.userId)
+      this.    userId= this.route.snapshot.params['id'];
+      this.hotelService.getById(this.  userId)
       .subscribe(data => {
         console.log(data),
         this.user=data;
+        // this.userId = this.route.snapshot.params['userId'];
+        // this.hotelService.getById(this.userId).subscribe((data: User)=>{
+        //   this.users = data;
       })
     }
     updateUser(){
-      this.  userId = this.route.snapshot.params['userId'];
+      this.userId= this.route.snapshot.params['userId'];
 
       this.hotelService.updateUser(this.  userId, this.user)
 
@@ -37,10 +41,10 @@ HotelserviceService:any;
         this.gotoList();
       } );
     }
-  User(userId: any, User: any) {
+ /* User(userId: any, User: any) {
     throw new Error('Method not implemented.');
   }
-    
+    */
     onSubmit(){
       this.updateUser();
     }

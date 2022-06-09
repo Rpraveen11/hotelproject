@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 import { User } from './user';
 
@@ -8,10 +9,9 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class HotelserviceService {
-  [x: string]: any;
-  // getAllUserFromRemote() {
-  //   throw new Error('Method not implemented.');
-  // }
+
+  id:number;
+  userId:number;
 private baseURL ="http://localhost:8086";
   
 
@@ -25,15 +25,29 @@ private baseURL ="http://localhost:8086";
     return this.httpClient.post(this.baseURL+"/api/user", user);
   }
 
-  updateUser(id:number, user:User) : Observable<Object> {
-    return this.httpClient.put(this.baseURL+"/api/user/"+id, user);
+  updateUser(userId:number, user:User) : Observable<Object> {
+    return this.httpClient.put(this.baseURL+"/api/user/"+userId, user);
   }
 
-  deleteUser(id: number) :Observable<Object>{
-    return this.httpClient.delete(this.baseURL+"/api/user/"+id);
+  deleteUser(userId: number) :Observable<Object>{
+    return this.httpClient.delete(this.baseURL+"/api/user/"+userId);
   }
 
-  getById(id:number): Observable<Object>{
-    return this.httpClient.get(this.baseURL+"/api/user/"+id);
-  }
+  // getById(userId:number): Observable<Object>{
+  //   return this.httpClient.get(this.baseURL+"/api/user/"+userId);
+  // }
+ getById(userId): Observable<User> {
+    return this.httpClient.get<User>(this.baseURL +"/api/user/${userId}");
+   
+ }
+  // errorHandler(errorHandler: any): import("rxjs").OperatorFunction<User, User> {
+  //   throw new Error('Method not implemented.');
+  // }
 }
+
+
+
+// function catchError(errorHandler: any): import("rxjs").OperatorFunction<User, User> {
+//   throw new Error('Function not implemented.');
+// }
+

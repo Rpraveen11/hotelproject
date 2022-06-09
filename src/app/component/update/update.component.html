@@ -1,5 +1,6 @@
 
 <div class="updateUser">
+    <div *ngFor="let user of user" class="container">
     <form (ngSubmit)="onSubmit()">
          <div class="form-group">
           <label for="userId ">User Id</label>
@@ -27,5 +28,5 @@
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
-
+</div>
 </div><router-outlet></router-outlet>

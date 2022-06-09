@@ -4,13 +4,15 @@ type Long = number;
 
 @NgModule()
 export class User {
-    userId:number;
+   
+    userId:Long;
     username:String;
     email:String;
     phoneno:number;
     location:String;
 
 }
+
 export class Reservation{
     
 }

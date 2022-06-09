@@ -9,7 +9,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./hotel-list.component.css']
 })
 export class HotelListComponent implements OnInit {
- user: User[];
+ users: User[];
 
  HotelServiceService:any;
   constructor(private hotelserviceService: HotelserviceService ,private router: Router) { }
@@ -18,7 +18,7 @@ export class HotelListComponent implements OnInit {
   this.listAllUserFromRemote();
   }
 private listAllUserFromRemote(){
-  this.hotelserviceService['listAllUserFromRemote']().subscribe(data =>{this.user=data;})
+  this.hotelserviceService['listAllUserFromRemote']().subscribe(data =>{this.users=data;})
 }
 
 
